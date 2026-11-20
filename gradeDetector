@@ -1,0 +1,33 @@
+const alunos = [
+    { nome: "Carlos", nota: 8, idade: 20 },
+    { nome: "Ana", nota: 5, idade: 19 },
+    { nome: "Pedro", nota: 9.5, idade: 22 },
+    { nome: "Mariana", nota: 6, idade: 21 },
+    { nome: "Lucas", nota: 4, idade: 18 },
+    { nome: "Juliana", nota: 7.5, idade: 20 },
+    { nome: "Rafael", nota: 10, idade: 23 }
+];
+
+function gerarRelatorioAlunos(alunos) {
+    const selecionados = alunos.filter(function(aluno){
+        let nota = aluno.nota;
+        let nome = aluno.nome;
+
+        return nota > 7 && nome
+    })
+
+    const aprovados = selecionados.map(function(aluno){
+        let nota = aluno.nota;
+        let nome = aluno.nome;
+        
+        return {
+            nome ,
+            nota ,
+            situacao: "Aprovado"
+        }
+    })
+    return aprovados
+};
+
+let solucao = gerarRelatorioAlunos(alunos);
+console.log(solucao)
